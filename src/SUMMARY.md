@@ -7,6 +7,7 @@
 - [Resources](./resources.md)
 
 - [Fractal I: Supervised Learning](./fractals/fractal1_overview.md)
+  - [Lecture 0: Pre-Requisites for ML](./notes/lecture0.md)
   - [Lecture 1: Introduction to AI and ML](./notes/lecture1.md)
   - [Lecture 2: Paradigms of ML](./notes/lecture2.md)
   - [Lecture 3: Bayesian & Decision Trees](./notes/lecture3.md)
