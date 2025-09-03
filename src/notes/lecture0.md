@@ -50,11 +50,7 @@ $$
 - **Matrix multiplication**:  
   Multiply row of first × column of second.  
   $$
-  \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
-  \cdot
-  \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
-  =
-  \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}
+  \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}\cdot\begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}=\begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}
   $$
 
 ---
