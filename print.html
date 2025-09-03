@@ -288,14 +288,10 @@ $$
 A = \begin{bmatrix} 1 &amp; 2 \ 3 &amp; 4 \end{bmatrix}
 $$</p>
 <ul>
-<li>
-<h1 bmatrix=""><strong>Matrix multiplication</strong>:<br />
+<li><strong>Matrix multiplication</strong>:<br />
 Multiply row of first × column of second.<br />
 $$
-\begin{bmatrix} 1 &amp; 2 \ 3 &amp; 4 \end{bmatrix}
-\cdot
-\begin{bmatrix} 5 &amp; 6 \ 7 &amp; 8 \end</h1>
-\begin{bmatrix} 19 &amp; 22 \ 43 &amp; 50 \end{bmatrix}
+\begin{bmatrix} 1 &amp; 2 \ 3 &amp; 4 \end{bmatrix}\cdot\begin{bmatrix} 5 &amp; 6 \ 7 &amp; 8 \end{bmatrix}=\begin{bmatrix} 19 &amp; 22 \ 43 &amp; 50 \end{bmatrix}
 $$</li>
 </ul>
 <hr />
@@ -778,34 +774,149 @@ Marks = [81, 93, 91, 97].</p>
 <li>Logistic regression → classification (0/1).</li>
 </ul>
 <hr />
-<div style="break-before: page; page-break-before: always;"></div><h1 id="-lecture-3-ensemble-methods"><a class="header" href="#-lecture-3-ensemble-methods">📘 Lecture 3: Ensemble Methods</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-3-bayesian--decision-trees"><a class="header" href="#lecture-3-bayesian--decision-trees">Lecture 3: Bayesian &amp; Decision Trees</a></h1>
+<h2 id="1-intuition"><a class="header" href="#1-intuition">1. Intuition</a></h2>
+<p>Think of a <strong>decision tree</strong> like a flowchart: you start at the root, ask questions (splits), and reach a leaf that gives a decision (class or prediction).<br />
+But a classical tree just picks <strong>the single best split</strong> at each step (like ID3 or CART).<br />
+A <strong>Bayesian Decision Tree</strong> instead says:</p>
+<blockquote>
+<p>“There’s uncertainty about which split is truly best. Let’s treat the tree as a probability model and use Bayes’ rule to average over possible trees.”</p>
+</blockquote>
+<p>So instead of one “best” tree, BDTs maintain a <strong>distribution over trees</strong>, capturing uncertainty in structure and parameters.</p>
 <hr />
-<h2 id="1-introduction-to-ensembles"><a class="header" href="#1-introduction-to-ensembles">1. Introduction to Ensembles</a></h2>
+<h2 id="2-the-bayesian-framework"><a class="header" href="#2-the-bayesian-framework">2. The Bayesian Framework</a></h2>
+<h3 id="21-bayes-rule-recap"><a class="header" href="#21-bayes-rule-recap">2.1 Bayes’ Rule Recap</a></h3>
+<p>For a hypothesis/model (h) and data (D):
+[
+P(h \mid D) ;=; \frac{P(D \mid h) , P(h)}{P(D)}
+]</p>
 <ul>
-<li>Why use ensembles? Bias-variance tradeoff</li>
+<li>(P(h)): prior belief about tree structures.</li>
+<li>(P(D \mid h)): likelihood of data given the tree.</li>
+<li>(P(h \mid D)): posterior probability over trees.</li>
+<li>(P(D)): evidence (normalizer).</li>
 </ul>
-<h2 id="2-bagging"><a class="header" href="#2-bagging">2. Bagging</a></h2>
+<p>In BDTs, (h) is a particular tree structure with its splitting rules and leaf parameters.</p>
+<hr />
+<h3 id="22-tree-components"><a class="header" href="#22-tree-components">2.2 Tree Components</a></h3>
 <ul>
-<li>Bootstrap aggregating, Random Forests</li>
-</ul>
-<h2 id="3-boosting"><a class="header" href="#3-boosting">3. Boosting</a></h2>
-<ul>
-<li>AdaBoost, Gradient Boosting, XGBoost</li>
-</ul>
-<h2 id="4-stacking"><a class="header" href="#4-stacking">4. Stacking</a></h2>
-<ul>
-<li>Combining multiple models</li>
-</ul>
-<h2 id="5-applications--examples"><a class="header" href="#5-applications--examples">5. Applications &amp; Examples</a></h2>
-<ul>
-<li>Kaggle competitions, real-world use cases</li>
-</ul>
-<h2 id="6-summary"><a class="header" href="#6-summary">6. Summary</a></h2>
-<ul>
-<li>Key takeaways and further reading</li>
+<li><strong>Structure prior</strong> (P(T)): distribution over possible tree shapes (depth, splits). Often favors smaller trees (Occam’s razor).</li>
+<li><strong>Leaf distributions</strong>: each leaf models class probabilities (e.g., multinomial with Dirichlet prior).</li>
+<li><strong>Likelihood</strong> (P(D \mid T)): probability of data given the splits and leaf distributions.</li>
 </ul>
 <hr />
-<h1 id="lecture-3-bayesian--decision-trees"><a class="header" href="#lecture-3-bayesian--decision-trees">Lecture 3: Bayesian &amp; Decision Trees</a></h1>
+<h2 id="3-bayesian-decision-tree-construction"><a class="header" href="#3-bayesian-decision-tree-construction">3. Bayesian Decision Tree Construction</a></h2>
+<h3 id="31-priors"><a class="header" href="#31-priors">3.1 Priors</a></h3>
+<ol>
+<li><strong>Structure prior</strong>: probability of expanding a node at depth (d):<br />
+[
+P(\text{split at depth } d) = \alpha (1+d)^{-\beta}
+]<br />
+with hyperparameters (\alpha, \beta) controlling preference for shallow trees.</li>
+<li><strong>Leaf prior</strong>: for classification, leaf class probabilities (\theta \sim \text{Dirichlet}(\gamma)).</li>
+</ol>
+<h3 id="32-posterior"><a class="header" href="#32-posterior">3.2 Posterior</a></h3>
+<p>Given dataset (D = {(x_i, y_i)}), the posterior over trees:
+[
+P(T \mid D) ;\propto; P(D \mid T) , P(T)
+]</p>
+<h3 id="33-prediction"><a class="header" href="#33-prediction">3.3 Prediction</a></h3>
+<p>For a new input (x), Bayesian prediction <strong>averages over trees</strong>:
+[
+P(y \mid x, D) ;=; \sum_{T} P(y \mid x, T) , P(T \mid D)
+]
+In practice, the sum over all trees is intractable → we use <strong>sampling (MCMC)</strong> or <strong>variational approximations</strong>.</p>
+<hr />
+<h2 id="4-learning-bayesian-trees"><a class="header" href="#4-learning-bayesian-trees">4. Learning Bayesian Trees</a></h2>
+<h3 id="41-posterior-sampling"><a class="header" href="#41-posterior-sampling">4.1 Posterior Sampling</a></h3>
+<ul>
+<li><strong>MCMC (Markov Chain Monte Carlo)</strong> is used to sample tree structures proportional to posterior probability.</li>
+<li>Common moves:
+<ul>
+<li>Grow a node (split a leaf).</li>
+<li>Prune a node (remove a split).</li>
+<li>Change a split rule.</li>
+</ul>
+</li>
+</ul>
+<h3 id="42-marginal-likelihood-at-leaves"><a class="header" href="#42-marginal-likelihood-at-leaves">4.2 Marginal Likelihood at Leaves</a></h3>
+<p>For a leaf with class counts (n_1, \dots, n_K) and prior (\text{Dirichlet}(\gamma)),<br />
+the marginal likelihood is:
+[
+P(D_{\text{leaf}}) = \frac{\Gamma(\sum_k \gamma_k)}{\prod_k \Gamma(\gamma_k)} ;
+\frac{\prod_k \Gamma(n_k + \gamma_k)}{\Gamma(\sum_k n_k + \sum_k \gamma_k)}
+]</p>
+<p>This formula allows computing (P(D \mid T)) without explicitly estimating parameters.</p>
+<hr />
+<h2 id="5-advantages-of-bayesian-trees"><a class="header" href="#5-advantages-of-bayesian-trees">5. Advantages of Bayesian Trees</a></h2>
+<ol>
+<li><strong>Uncertainty estimation</strong>: Instead of one tree, BDTs give posterior distributions over trees.</li>
+<li><strong>Better generalization</strong>: Avoids overfitting by averaging multiple plausible trees.</li>
+<li><strong>Model selection built-in</strong>: Tree depth and splits are controlled probabilistically (priors penalize overly complex trees).</li>
+</ol>
+<hr />
+<h2 id="6-practical-example"><a class="header" href="#6-practical-example">6. Practical Example</a></h2>
+<h3 id="dataset-enjoy-sport"><a class="header" href="#dataset-enjoy-sport">Dataset: “Enjoy Sport”</a></h3>
+<p>Suppose we want to classify if a person enjoys sport ((y={Yes,No})) based on attributes (Sky, Temp, Wind, etc.).</p>
+<ol>
+<li><strong>Classical Tree</strong>: Picks the attribute with max information gain at each step.</li>
+<li><strong>Bayesian Tree</strong>: Assigns probabilities to possible splits, samples multiple tree structures, then averages predictions.</li>
+</ol>
+<p>So instead of predicting:</p>
+<ul>
+<li>“Sky = Sunny → Enjoy Sport = Yes” deterministically,<br />
+it says:</li>
+<li>“There’s a 70% chance Enjoy Sport = Yes, 30% No,” reflecting uncertainty in tree choice.</li>
+</ul>
+<hr />
+<h2 id="7-coding-snippet-simplified"><a class="header" href="#7-coding-snippet-simplified">7. Coding Snippet (Simplified)</a></h2>
+<pre><code class="language-python">import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import BaggingClassifier
+
+# Trick: approximate Bayesian averaging by bagging many trees
+# Each tree gets a bootstrap sample → simulates posterior sampling
+bayesian_tree = BaggingClassifier(
+    base_estimator=DecisionTreeClassifier(),
+    n_estimators=50,   # number of trees ~ posterior samples
+    bootstrap=True
+)
+
+X = np.array([[1,0],[0,1],[1,1],[0,0]])  # toy features
+y = np.array([1,0,1,0])                  # labels
+
+bayesian_tree.fit(X, y)
+print(bayesian_tree.predict_proba([[1,0]]))  # predictive distribution
+</code></pre>
+<p>While true Bayesian decision trees use MCMC, <strong>bagging approximates the posterior averaging</strong> in practice.</p>
+<hr />
+<h2 id="8-practice-problems"><a class="header" href="#8-practice-problems">8. Practice Problems</a></h2>
+<ol>
+<li><strong>Conceptual</strong>:
+<ul>
+<li>Why might a Bayesian decision tree perform better than a single CART tree in noisy data?</li>
+</ul>
+</li>
+<li><strong>Math</strong>:
+<ul>
+<li>Derive the marginal likelihood of a leaf with counts (n_1 = 3, n_2 = 2) under a uniform Dirichlet prior (\gamma = (1,1)).</li>
+</ul>
+</li>
+<li><strong>Coding</strong>:
+<ul>
+<li>Use <code>sklearn</code>’s <code>RandomForestClassifier</code> and interpret it as an approximation to Bayesian averaging over trees. Compare results to a single tree.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="9-summary-notes"><a class="header" href="#9-summary-notes">9. Summary Notes</a></h2>
+<ul>
+<li><strong>Classical trees</strong>: pick greedy splits → single tree.</li>
+<li><strong>Bayesian trees</strong>: use Bayes’ rule → distribution over trees.</li>
+<li><strong>Posterior sampling</strong>: MCMC to explore tree space.</li>
+<li><strong>Predictions</strong>: average over sampled trees = better calibrated probabilities.</li>
+<li><strong>Approximation</strong>: Random forests and bagging ≈ Bayesian averaging.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-lecture-4-graphical-models-hmm-crf-maxent"><a class="header" href="#-lecture-4-graphical-models-hmm-crf-maxent">📘 Lecture 4: Graphical Models (HMM, CRF, MaxEnt)</a></h1>
 <hr />
 <h2 id="1-introduction-to-graphical-models"><a class="header" href="#1-introduction-to-graphical-models">1. Introduction to Graphical Models</a></h2>
@@ -825,11 +936,11 @@ Marks = [81, 93, 91, 97].</p>
 <ul>
 <li>Principle of maximum entropy, logistic regression</li>
 </ul>
-<h2 id="5-applications--examples-1"><a class="header" href="#5-applications--examples-1">5. Applications &amp; Examples</a></h2>
+<h2 id="5-applications--examples"><a class="header" href="#5-applications--examples">5. Applications &amp; Examples</a></h2>
 <ul>
 <li>NLP, bioinformatics, time series</li>
 </ul>
-<h2 id="6-summary-1"><a class="header" href="#6-summary-1">6. Summary</a></h2>
+<h2 id="6-summary"><a class="header" href="#6-summary">6. Summary</a></h2>
 <ul>
 <li>Key takeaways and further reading</li>
 </ul>
