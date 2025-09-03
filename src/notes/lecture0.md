@@ -1,24 +1,3 @@
-# 📘 Lecture 0: Course Introduction & Logistics
-
----
-
-## 1. Course Overview
-- Syllabus, grading, resources, expectations
-
-## 2. Introduction to AI/ML
-- What is AI? What is ML? Applications
-
-## 3. Tools & Environment
-- Python, Jupyter, Git, datasets
-
-## 4. Getting Started
-- How to set up your environment
-
-## 5. Summary
-- Key takeaways and Q&A
-
----
-
 # 📘 Week 0: Math Foundations (Detailed Notes + Problems)
 
 ---
