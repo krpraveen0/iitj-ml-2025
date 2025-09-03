@@ -175,13 +175,185 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="lecture-1-introduction-to-ai-and-ml"><a class="header" href="#lecture-1-introduction-to-ai-and-ml">Lecture 1: Introduction to AI and ML</a></h1>
+                        <h1 id="-lecture-1-introduction-to-machine-learning"><a class="header" href="#-lecture-1-introduction-to-machine-learning">📘 Lecture 1: Introduction to Machine Learning</a></h1>
+<hr />
+<h2 id="-1-what-is-machine-learning"><a class="header" href="#-1-what-is-machine-learning">🔹 1. What is Machine Learning?</a></h2>
+<h3 id="definition-tom-mitchell-1997"><a class="header" href="#definition-tom-mitchell-1997"><strong>Definition (Tom Mitchell, 1997)</strong></a></h3>
+<p>A computer program is said to <strong>learn</strong> from experience <strong>E</strong> with respect to some class of tasks <strong>T</strong> and performance measure <strong>P</strong>, if its performance at tasks in T, as measured by P, improves with experience E.</p>
+<p>👉 Example:</p>
+<ul>
+<li><strong>Task (T)</strong>: Predict if tomorrow will be sunny or rainy.</li>
+<li><strong>Performance (P)</strong>: Accuracy of predictions.</li>
+<li><strong>Experience (E)</strong>: Past weather data (temperature, humidity, etc).</li>
+</ul>
+<hr />
+<h2 id="-2-components-of-ml"><a class="header" href="#-2-components-of-ml">🔹 2. Components of ML</a></h2>
+<ol>
+<li>
+<p><strong>Data Storage</strong> – Collect data (tables, images, text).</p>
+<ul>
+<li>Example: Students’ hours studied vs. exam marks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Abstraction</strong> – Represent data with models.</p>
+<ul>
+<li>Example: Fit a line y = mx + b.</li>
+</ul>
+</li>
+<li>
+<p><strong>Generalization</strong> – Perform well on <strong>new unseen data</strong>, not just training data.</p>
+<ul>
+<li>Example: Model predicts marks of a new student.</li>
+</ul>
+</li>
+<li>
+<p><strong>Evaluation</strong> – Measure performance (accuracy, error rate, precision, recall, F1).</p>
+</li>
+</ol>
+<hr />
+<h2 id="-3-types-of-learning"><a class="header" href="#-3-types-of-learning">🔹 3. Types of Learning</a></h2>
+<h3 id="1-supervised-learning"><a class="header" href="#1-supervised-learning"><strong>1. Supervised Learning</strong></a></h3>
+<ul>
+<li>Data has <strong>labels</strong>.</li>
+<li>Goal: Learn mapping from inputs → outputs.</li>
+<li>Examples:
+<ul>
+<li>Predict house prices (Regression).</li>
+<li>Spam email detection (Classification).</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-unsupervised-learning"><a class="header" href="#2-unsupervised-learning"><strong>2. Unsupervised Learning</strong></a></h3>
+<ul>
+<li>Data has <strong>no labels</strong>.</li>
+<li>Goal: Find structure/patterns.</li>
+<li>Examples:
+<ul>
+<li>Group customers by spending (Clustering).</li>
+<li>Reduce image dimensions (PCA).</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-reinforcement-learning"><a class="header" href="#3-reinforcement-learning"><strong>3. Reinforcement Learning</strong></a></h3>
+<ul>
+<li>Agent interacts with <strong>environment</strong>.</li>
+<li>Learns by rewards and penalties.</li>
+<li>Examples:
+<ul>
+<li>Training robots to walk.</li>
+<li>AlphaGo playing chess/Go.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="-4-theoretical-perspectives"><a class="header" href="#-4-theoretical-perspectives">🔹 4. Theoretical Perspectives</a></h2>
+<h3 id="version-spaces"><a class="header" href="#version-spaces"><strong>Version Spaces</strong></a></h3>
+<ul>
+<li>All hypotheses consistent with training data.</li>
+<li>Example: If hypothesis = “Play Tennis when sunny,” then version space = all rules that fit given samples.</li>
+</ul>
+<hr />
+<h3 id="pac-learning-probably-approximately-correct"><a class="header" href="#pac-learning-probably-approximately-correct"><strong>PAC Learning (Probably Approximately Correct)</strong></a></h3>
+<ul>
+<li>Introduced by Valiant (1984).</li>
+<li>Idea: An algorithm is PAC-learnable if, with high probability, it outputs a hypothesis close to the true function, given enough training examples.</li>
+<li>Formal: For any ε (accuracy) and δ (confidence), the learner finds h such that:<br />
+$$
+P(error(h) \leq \epsilon) \geq 1 - \delta
+$$</li>
+</ul>
+<hr />
+<h3 id="vc-dimension-vapnikchervonenkis"><a class="header" href="#vc-dimension-vapnikchervonenkis"><strong>VC Dimension (Vapnik–Chervonenkis)</strong></a></h3>
+<ul>
+<li>Measures <strong>capacity/complexity</strong> of a model.</li>
+<li>Higher VC = more complex model (can fit more patterns).</li>
+<li>Example:
+<ul>
+<li>A line in 2D can shatter (perfectly classify) at most 3 points → VC dimension = 3.</li>
+<li>A perceptron in d dimensions has VC dimension = d+1.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="-5-coding-example--enjoy-sport-dataset"><a class="header" href="#-5-coding-example--enjoy-sport-dataset">🔹 5. Coding Example – “Enjoy Sport” Dataset</a></h2>
+<p>We’ll build a <strong>rule-based classifier</strong>.</p>
+<h3 id="dataset"><a class="header" href="#dataset">Dataset</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Weather</th><th>Temperature</th><th>Humidity</th><th>Wind</th><th>Play Sport</th></tr></thead><tbody>
+<tr><td>Sunny</td><td>Hot</td><td>High</td><td>Weak</td><td>No</td></tr>
+<tr><td>Sunny</td><td>Hot</td><td>High</td><td>Strong</td><td>No</td></tr>
+<tr><td>Overcast</td><td>Hot</td><td>High</td><td>Weak</td><td>Yes</td></tr>
+<tr><td>Rain</td><td>Mild</td><td>High</td><td>Weak</td><td>Yes</td></tr>
+<tr><td>Rain</td><td>Cool</td><td>Normal</td><td>Weak</td><td>Yes</td></tr>
+<tr><td>Rain</td><td>Cool</td><td>Normal</td><td>Strong</td><td>No</td></tr>
+<tr><td>Overcast</td><td>Cool</td><td>Normal</td><td>Strong</td><td>Yes</td></tr>
+<tr><td>Sunny</td><td>Mild</td><td>High</td><td>Weak</td><td>No</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h3 id="python-implementation"><a class="header" href="#python-implementation">Python Implementation</a></h3>
+<pre><code class="language-python"># Rule-based classifier for "Enjoy Sport"
+
+# Simple dataset
+data = [
+    ("Sunny", "Hot", "High", "Weak", "No"),
+    ("Sunny", "Hot", "High", "Strong", "No"),
+    ("Overcast", "Hot", "High", "Weak", "Yes"),
+    ("Rain", "Mild", "High", "Weak", "Yes"),
+    ("Rain", "Cool", "Normal", "Weak", "Yes"),
+    ("Rain", "Cool", "Normal", "Strong", "No"),
+    ("Overcast", "Cool", "Normal", "Strong", "Yes"),
+    ("Sunny", "Mild", "High", "Weak", "No"),
+]
+
+# Build simple rule-based model (enjoy sport if Overcast OR (Rain &amp; Weak Wind))
+def rule_based_classifier(weather, temp, humidity, wind):
+    if weather == "Overcast":
+        return "Yes"
+    if weather == "Rain" and wind == "Weak":
+        return "Yes"
+    return "No"
+
+# Test classifier
+correct = 0
+for row in data:
+    prediction = rule_based_classifier(*row[:-1])
+    if prediction == row[-1]:
+        correct += 1
+
+print(f"Accuracy: {correct/len(data) * 100:.2f}%")
+</code></pre>
+<p>Expected output: <strong>Accuracy ~100%</strong> (since rules match dataset).</p>
+<hr />
+<h2 id="-practice-tasks"><a class="header" href="#-practice-tasks">🎯 Practice Tasks</a></h2>
+<ol>
+<li>Write your own rule-based classifier for “Play Tennis” dataset.</li>
+<li>Identify T, P, and E for the task: predicting movie ratings from user history.</li>
+<li>Give an example of supervised, unsupervised, and reinforcement learning from <strong>your daily life</strong>.</li>
+<li>Draw version space for hypotheses: “Play Sport if Weather = Sunny OR Overcast.”</li>
+<li>Compute VC dimension of:
+<ul>
+<li>A line in 1D.</li>
+<li>A line in 2D.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="-summary"><a class="header" href="#-summary">📝 Summary</a></h2>
+<ul>
+<li><strong>ML definition</strong> = Task, Performance, Experience.</li>
+<li><strong>Components</strong> = data storage, abstraction, generalization, evaluation.</li>
+<li><strong>Types</strong> = Supervised, Unsupervised, Reinforcement.</li>
+<li><strong>Theories</strong> = Version Spaces, PAC learning, VC dimension.</li>
+<li><strong>Hands-on</strong>: Built simple rule-based classifier for “Enjoy Sport.”</li>
+</ul>
+<hr />
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../fractals/fractal1_overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../notes/lecture0.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -195,7 +367,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../fractals/fractal1_overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../notes/lecture0.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

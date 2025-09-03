@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Fractal I: Supervised Learning</title>
+        <title>Lecture 0: Pre-Requisites for ML</title>
 
 
         <!-- Custom HTML head -->
@@ -175,18 +175,244 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="fractal-i-supervised-learning"><a class="header" href="#fractal-i-supervised-learning">Fractal I: Supervised Learning</a></h1>
-<p>Overview and lecture notes for supervised learning.</p>
+                        <h1 id="-lecture-0-course-introduction--logistics"><a class="header" href="#-lecture-0-course-introduction--logistics">📘 Lecture 0: Course Introduction &amp; Logistics</a></h1>
+<hr />
+<h2 id="1-course-overview"><a class="header" href="#1-course-overview">1. Course Overview</a></h2>
+<ul>
+<li>Syllabus, grading, resources, expectations</li>
+</ul>
+<h2 id="2-introduction-to-aiml"><a class="header" href="#2-introduction-to-aiml">2. Introduction to AI/ML</a></h2>
+<ul>
+<li>What is AI? What is ML? Applications</li>
+</ul>
+<h2 id="3-tools--environment"><a class="header" href="#3-tools--environment">3. Tools &amp; Environment</a></h2>
+<ul>
+<li>Python, Jupyter, Git, datasets</li>
+</ul>
+<h2 id="4-getting-started"><a class="header" href="#4-getting-started">4. Getting Started</a></h2>
+<ul>
+<li>How to set up your environment</li>
+</ul>
+<h2 id="5-summary"><a class="header" href="#5-summary">5. Summary</a></h2>
+<ul>
+<li>Key takeaways and Q&amp;A</li>
+</ul>
+<hr />
+<h1 id="-week-0-math-foundations-detailed-notes--problems"><a class="header" href="#-week-0-math-foundations-detailed-notes--problems">📘 Week 0: Math Foundations (Detailed Notes + Problems)</a></h1>
+<hr />
+<h2 id="-1-linear-algebra"><a class="header" href="#-1-linear-algebra">🔹 1. Linear Algebra</a></h2>
+<h3 id="11-vectors"><a class="header" href="#11-vectors"><strong>1.1 Vectors</strong></a></h3>
+<ul>
+<li>A vector = ordered list of numbers.<br />
+$$
+\mathbf{x} = \begin{bmatrix} x_1 \ x_2 \ x_3 \end{bmatrix}
+$$<br />
+Example: A student’s marks in 3 subjects: [80, 75, 90].</li>
+</ul>
+<p>👉 Think of vectors as <strong>arrows</strong> in space pointing from the origin.</p>
+<hr />
+<h3 id="12-vector-operations"><a class="header" href="#12-vector-operations"><strong>1.2 Vector Operations</strong></a></h3>
+<ul>
+<li>
+<p><strong>Addition</strong>:
+$$
+[1,2] + [3,4] = [4,6]
+$$</p>
+</li>
+<li>
+<p><strong>Scalar multiplication</strong>:
+$$
+2 \cdot [3,5] = [6,10]
+$$</p>
+</li>
+<li>
+<p><strong>Dot Product (similarity)</strong>:
+$$
+\mathbf{x}\cdot \mathbf{y} = \sum_{i=1}^n x_i y_i
+$$<br />
+Example:<br />
+[1,2] ⋅ [3,4] = (1)(3) + (2)(4) = 11.</p>
+</li>
+<li>
+<p><strong>Norm (Length of vector)</strong>:
+$$
+|\mathbf{x}| = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2}
+$$<br />
+Example: ||[3,4]|| = √(3²+4²) = 5.</p>
+</li>
+</ul>
+<hr />
+<h3 id="13-matrices"><a class="header" href="#13-matrices"><strong>1.3 Matrices</strong></a></h3>
+<p>A matrix is a <strong>table of numbers</strong>.<br />
+$$
+A = \begin{bmatrix} 1 &amp; 2 \ 3 &amp; 4 \end{bmatrix}
+$$</p>
+<ul>
+<li>
+<h1 bmatrix=""><strong>Matrix multiplication</strong>:<br />
+Multiply row of first × column of second.<br />
+$$
+\begin{bmatrix} 1 &amp; 2 \ 3 &amp; 4 \end{bmatrix}
+\cdot
+\begin{bmatrix} 5 &amp; 6 \ 7 &amp; 8 \end</h1>
+\begin{bmatrix} 19 &amp; 22 \ 43 &amp; 50 \end{bmatrix}
+$$</li>
+</ul>
+<hr />
+<h3 id="-solved-example"><a class="header" href="#-solved-example">✅ Solved Example</a></h3>
+<p>Compute dot product and norm:<br />
+$$
+x = [2,3], \quad y = [4,5]
+$$</p>
+<ul>
+<li>Dot product: 2·4 + 3·5 = 23.</li>
+<li>Norm of x: √(2²+3²) = √13 ≈ 3.61.</li>
+</ul>
+<hr />
+<h3 id="-practice-problems"><a class="header" href="#-practice-problems">💡 Practice Problems</a></h3>
+<ol>
+<li>Compute [1,2,3] ⋅ [4,5,6].</li>
+<li>Find the length of vector [6,8].</li>
+<li>Multiply matrices:<br />
+$$\begin{bmatrix}1 &amp; 2 \ 0 &amp; 1\end{bmatrix} \cdot \begin{bmatrix}3 &amp; 4 \ 5 &amp; 6\end{bmatrix}$$</li>
+</ol>
+<hr />
+<h2 id="-2-calculus"><a class="header" href="#-2-calculus">🔹 2. Calculus</a></h2>
+<h3 id="21-derivatives"><a class="header" href="#21-derivatives"><strong>2.1 Derivatives</strong></a></h3>
+<p>The derivative measures <strong>rate of change</strong> (slope of curve).<br />
+$$
+f'(x) = \frac{df}{dx}
+$$</p>
+<ul>
+<li>Example:<br />
+If f(x) = x², then f'(x) = 2x.<br />
+At x=3, slope = 6.</li>
+</ul>
+<hr />
+<h3 id="22-gradients"><a class="header" href="#22-gradients"><strong>2.2 Gradients</strong></a></h3>
+<p>For functions with many variables:<br />
+$$
+f(x,y) = x^2 + y^2
+$$<br />
+Gradient = vector of partial derivatives:<br />
+$$
+\nabla f(x,y) = \left[ \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right] = [2x, 2y]
+$$</p>
+<hr />
+<h3 id="23-optimization-gradient-descent"><a class="header" href="#23-optimization-gradient-descent"><strong>2.3 Optimization (Gradient Descent)</strong></a></h3>
+<p>ML uses calculus to <strong>minimize error</strong>.<br />
+Update rule:
+$$
+\theta := \theta - \alpha \cdot \nabla J(\theta)
+$$<br />
+(where α = learning rate)</p>
+<hr />
+<h3 id="-solved-example-1"><a class="header" href="#-solved-example-1">✅ Solved Example</a></h3>
+<p>Find derivative of:<br />
+$$
+f(x) = 3x^2 + 2x
+$$<br />
+Solution:<br />
+f'(x) = 6x + 2.<br />
+At x=2: slope = 6(2)+2 = 14.</p>
+<hr />
+<h3 id="-practice-problems-1"><a class="header" href="#-practice-problems-1">💡 Practice Problems</a></h3>
+<ol>
+<li>Differentiate f(x) = x³ - 5x² + 6.</li>
+<li>Compute gradient of f(x,y) = x² + xy + y².</li>
+<li>If f(x) = x⁴, find slope at x=2.</li>
+</ol>
+<hr />
+<h2 id="-3-probability--statistics"><a class="header" href="#-3-probability--statistics">🔹 3. Probability &amp; Statistics</a></h2>
+<h3 id="31-basics"><a class="header" href="#31-basics"><strong>3.1 Basics</strong></a></h3>
+<ul>
+<li>P(A): probability of event A.</li>
+<li>P(A ∩ B): probability of A and B.</li>
+<li>P(A|B): probability of A given B.</li>
+</ul>
+<p><strong>Bayes’ Rule</strong>:<br />
+$$
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+$$</p>
+<hr />
+<h3 id="32-expectation--variance"><a class="header" href="#32-expectation--variance"><strong>3.2 Expectation &amp; Variance</strong></a></h3>
+<ul>
+<li>
+<p><strong>Expectation</strong>:
+$$
+E[X] = \sum x_i P(x_i)
+$$<br />
+(average value)</p>
+</li>
+<li>
+<p><strong>Variance</strong>:
+$$
+Var(X) = E[(X - E[X])^2]
+$$<br />
+(spread of data)</p>
+</li>
+</ul>
+<hr />
+<h3 id="33-common-distributions"><a class="header" href="#33-common-distributions"><strong>3.3 Common Distributions</strong></a></h3>
+<ul>
+<li><strong>Bernoulli</strong>: coin flip (0/1).</li>
+<li><strong>Gaussian (Normal)</strong>: bell curve.</li>
+</ul>
+<hr />
+<h3 id="-solved-example-2"><a class="header" href="#-solved-example-2">✅ Solved Example</a></h3>
+<p>Roll a fair dice. What is probability of 6?<br />
+$$
+P(6) = \frac{1}{6} ≈ 0.1667
+$$</p>
+<p>If you roll dice 600 times, expected number of 6s = 600 × 1/6 = 100.</p>
+<hr />
+<h3 id="-practice-problems-2"><a class="header" href="#-practice-problems-2">💡 Practice Problems</a></h3>
+<ol>
+<li>Toss a fair coin 3 times. Find probability of getting 2 heads.</li>
+<li>Compute mean &amp; variance of dataset: [2, 4, 4, 4, 5, 5, 7, 9].</li>
+<li>Apply Bayes’ rule:<br />
+A patient has a disease with probability 1%. A test is 90% accurate. If test is positive, what is probability that patient has disease?</li>
+</ol>
+<hr />
+<h2 id="-4-python-practice"><a class="header" href="#-4-python-practice">🔹 4. Python Practice</a></h2>
+<pre><code class="language-python">import numpy as np
+
+# Linear Algebra
+x = np.array([2,3]); y = np.array([4,5])
+print("Dot product:", np.dot(x,y))
+print("Norm of x:", np.linalg.norm(x))
+
+# Calculus (sympy)
+import sympy as sp
+x,y = sp.symbols('x y')
+f = 3*x**2 + 2*x
+print("Derivative:", sp.diff(f, x))
+g = x**2 + x*y + y**2
+print("Gradient:", [sp.diff(g, var) for var in (x,y)])
+
+# Probability
+data = [2,4,4,4,5,5,7,9]
+print("Mean:", np.mean(data))
+print("Variance:", np.var(data))
+</code></pre>
+<hr />
+<h2 id="-summary"><a class="header" href="#-summary">📌 Summary</a></h2>
+<ul>
+<li><strong>Linear Algebra</strong> = structure of data (vectors/matrices).</li>
+<li><strong>Calculus</strong> = optimization (slopes, gradients).</li>
+<li><strong>Probability</strong> = uncertainty, distributions, Bayes’ rule.</li>
+</ul>
+<hr />
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../resources.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../fractals/fractal1_overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../notes/lecture0.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../notes/lecture1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -196,11 +422,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../resources.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../fractals/fractal1_overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../notes/lecture0.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../notes/lecture1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
