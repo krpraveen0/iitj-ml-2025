@@ -271,6 +271,96 @@ def plot_ideal_performance_analysis(y_actual, y_predicted, title, filepath):
     plt.close()
     print(f"Ideal performance analysis saved: {filepath}")
 
+def plot_ridge_comparison(standard_cost, ridge_cost, title, filepath):
+    """Compare learning curves of standard vs Ridge regression."""
+    plt.figure(figsize=(12, 6))
+    
+    # Plot with different styles to make both curves visible
+    plt.plot(range(len(standard_cost)), standard_cost, 'b-', 
+             label='Standard Linear Regression', linewidth=3, alpha=0.8)
+    plt.plot(range(len(ridge_cost)), ridge_cost, 'r--', 
+             label='Ridge Regression (λ=1.0)', linewidth=3, alpha=0.8)
+    
+    plt.xlabel('Iterations')
+    plt.ylabel('Cost (MSE)')
+    plt.title(title)
+    plt.legend(fontsize=12)
+    plt.grid(True, alpha=0.3)
+    
+    # Add text box with final costs for comparison
+    final_standard = standard_cost[-1]
+    final_ridge = ridge_cost[-1]
+    textstr = f'Final Costs:\nStandard: {final_standard:.6f}\nRidge: {final_ridge:.6f}\nDifference: {abs(final_standard-final_ridge):.6f}'
+    props = dict(boxstyle='round', facecolor='wheat', alpha=0.8)
+    plt.text(0.02, 0.98, textstr, transform=plt.gca().transAxes, fontsize=10,
+             verticalalignment='top', bbox=props)
+    
+    plt.savefig(filepath, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"Ridge comparison plot saved: {filepath}")
+    print(f"  Standard final cost: {final_standard:.6f}")
+    print(f"  Ridge final cost: {final_ridge:.6f}")
+    print(f"  Difference: {abs(final_standard-final_ridge):.6f}")
+
+def plot_weight_comparison(standard_weights, ridge_weights, title, filepath):
+    """Compare weight magnitudes between standard and Ridge regression."""
+    features = range(len(standard_weights.flatten()))
+    
+    plt.figure(figsize=(12, 6))
+    width = 0.35
+    plt.bar([f - width/2 for f in features], standard_weights.flatten(), 
+            width=width, label='Standard Regression', alpha=0.7, color='blue')
+    plt.bar([f + width/2 for f in features], ridge_weights.flatten(), 
+            width=width, label='Ridge Regression (λ=1.0)', alpha=0.7, color='red')
+    plt.xlabel('Feature Index')
+    plt.ylabel('Weight Value')
+    plt.title(title)
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+    plt.xticks(features)
+    plt.savefig(filepath, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"Weight comparison plot saved: {filepath}")
+
+def plot_lambda_experiment(X_train, y_train, X_test, y_test, title, filepath):
+    """Experiment with different lambda values and visualize the effect."""
+    lambdas = [0.0, 0.1, 0.5, 1.0, 2.0, 5.0, 10.0]
+    r2_scores = []
+    weight_norms = []
+    
+    print("Running lambda experiment...")
+    for lam in lambdas:
+        model = LinearRegression(learning_rate=0.01, n_iterations=1000, lambda_param=lam)
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        r2_scores.append(calculate_r2(y_test, y_pred))
+        weight_norms.append(np.linalg.norm(model.weights))
+        print(f"  λ={lam:.1f}: R²={r2_scores[-1]:.4f}, Weight Norm={weight_norms[-1]:.4f}")
+    
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+    
+    # R² Score vs Lambda
+    ax1.plot(lambdas, r2_scores, 'bo-', linewidth=2, markersize=8)
+    ax1.set_xlabel('Lambda (Regularization Parameter)')
+    ax1.set_ylabel('R² Score')
+    ax1.set_title('Model Performance vs Regularization')
+    ax1.grid(True, alpha=0.3)
+    ax1.set_xscale('symlog')  # Better visualization for varying lambda values
+    
+    # Weight Norm vs Lambda
+    ax2.plot(lambdas, weight_norms, 'ro-', linewidth=2, markersize=8)
+    ax2.set_xlabel('Lambda (Regularization Parameter)')
+    ax2.set_ylabel('Weight Norm ||w||')
+    ax2.set_title('Weight Shrinkage vs Regularization')
+    ax2.grid(True, alpha=0.3)
+    ax2.set_xscale('symlog')  # Better visualization for varying lambda values
+    
+    plt.suptitle(title, fontsize=14, fontweight='bold')
+    plt.tight_layout()
+    plt.savefig(filepath, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"Lambda experiment plot saved: {filepath}")
+
 # ==============================================================================
 # 5. MAIN EXECUTION BLOCK / DRIVER CODE
 # ==============================================================================
@@ -372,6 +462,30 @@ if __name__ == '__main__':
     print(f"Standard weights norm: {np.linalg.norm(model.weights):.4f}")
     print(f"Ridge weights norm: {np.linalg.norm(ridge_model.weights):.4f}")
     
+    # Ridge Regression Visualizations
+    print("\nGenerating Ridge Regression Analysis Plots...")
+    
+    # 1. Learning Curve Comparison
+    plot_ridge_comparison(
+        model.cost_history, ridge_model.cost_history,
+        'Learning Curve Comparison: Standard vs Ridge Regression',
+        f'{ROLL_NO}_ridge_learning_comparison.png'
+    )
+    
+    # 2. Weight Comparison
+    plot_weight_comparison(
+        model.weights, ridge_model.weights,
+        'Weight Comparison: Standard vs Ridge Regression',
+        f'{ROLL_NO}_ridge_weight_comparison.png'
+    )
+    
+    # 3. Lambda Parameter Experiment
+    plot_lambda_experiment(
+        X_train_scaled, y_train, X_test_scaled, y_test,
+        'Regularization Parameter Analysis: Impact of Lambda',
+        f'{ROLL_NO}_lambda_experiment.png'
+    )
+    
     print("\nBONUS: Learning Rate Experiments")
     
     # Different Learning Rates
@@ -423,7 +537,11 @@ if __name__ == '__main__':
     print(f"  - {ROLL_NO}_actual_vs_predicted_with_ideal.png")
     print(f"  - {ROLL_NO}_ideal_performance_analysis.png")
     print(f"  - {ROLL_NO}_learning_rate_comparison.png")
+    print(f"  - {ROLL_NO}_ridge_learning_comparison.png")
+    print(f"  - {ROLL_NO}_ridge_weight_comparison.png")
+    print(f"  - {ROLL_NO}_lambda_experiment.png")
     print(f"Final Model Performance: MSE={mse:.4f}, R²={r2:.4f}")
+    print(f"Ridge Regression Performance: R²={r2_ridge:.4f}")
     print("="*60)
     
 
