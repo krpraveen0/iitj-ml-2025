@@ -61,16 +61,6 @@ except:
     print("scipy not available, images will be more pixelated")
     has_scipy = False
 
-# Generate training data
-print("Generating training data...")
-x_train = np.zeros((n_train, 28, 28), dtype=np.uint8)
-y_train = np.random.randint(0, n_classes, n_train)
-
-for i in range(n_train):
-    if (i + 1) % 10000 == 0:
-        print(f"  Generated {i+1}/{n_train} training images...")
-    x_train[i] = generate_synthetic_image(y_train[i])
-
 # Generate test data
 print("Generating test data...")
 x_test = np.zeros((n_test, 28, 28), dtype=np.uint8)
