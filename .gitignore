@@ -3,3 +3,5 @@ book/
 /__pycache__/
 *.pyc
 .DS_Store
+*.h5
+*.keras
