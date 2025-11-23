@@ -63,6 +63,7 @@
 - 60,000 training images, 10,000 test images
 - 28×28 grayscale images, 10 classes
 - Generated due to network access restrictions
+- Reference: https://github.com/zalandoresearch/fashion-mnist
 
 ### Frameworks Used
 - TensorFlow/Keras 2.x

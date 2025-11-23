@@ -2,6 +2,8 @@
 
 This directory contains the implementation of two fundamental deep generative models on Fashion-MNIST dataset.
 
+**Dataset Reference**: [Fashion-MNIST by Zalando Research](https://github.com/zalandoresearch/fashion-mnist)
+
 ## Contents
 
 ### Python Scripts
