@@ -1,0 +1,19 @@
+Denoising Autoencoder Training Log
+==================================================
+
+Architecture:
+  Latent Dimension: 32
+  Noise Factor: 0.5
+  Epochs: 5
+  Batch Size: 128
+
+Test Results:
+  Test Loss: 0.3333
+  Test MSE: 0.0039
+
+Training History:
+  Epoch 1: loss=0.4021, val_loss=0.3751
+  Epoch 2: loss=0.3651, val_loss=0.3505
+  Epoch 3: loss=0.3466, val_loss=0.3412
+  Epoch 4: loss=0.3384, val_loss=0.3343
+  Epoch 5: loss=0.3340, val_loss=0.3320

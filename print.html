@@ -13,21 +13,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -37,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex.js";
+            window.path_to_searchindex_js = "searchindex-ee47ac16.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script src="toc-57829c90.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -54,7 +53,7 @@
             </div>
         </div>
     </div>
-    <div id="body-container">
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -83,12 +82,12 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -103,39 +102,39 @@
             }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
                         </button>
                     </div>
 
@@ -143,42 +142,43 @@
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
                         <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
                             <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
                             </div>
                         </div>
                     </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
                         </ul>
                     </div>
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
 <p>Welcome to the Machine Learning course documentation.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="machine-learning-syllabus"><a class="header" href="#machine-learning-syllabus">Machine Learning Syllabus</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="machine-learning-syllabus"><a class="header" href="#machine-learning-syllabus">Machine Learning Syllabus</a></h1>
 <h2 id="evaluation"><a class="header" href="#evaluation">Evaluation</a></h2>
 <ul>
 <li>Minor Exam: 25%</li>
@@ -205,26 +205,36 @@
 <li>Clustering: k-means, k-medoids, EM, Agglomerative</li>
 <li>Hypothesis Evaluation, VC-dimension, Bias-Variance Tradeoff, Regression</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="evaluation-scheme"><a class="header" href="#evaluation-scheme">Evaluation Scheme</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="evaluation-scheme"><a class="header" href="#evaluation-scheme">Evaluation Scheme</a></h1>
 <ul>
 <li>Minor Exam: 25%</li>
 <li>Major Exam: 35%</li>
 <li>Assignments: 40%</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="course-schedule--lecture-tracking"><a class="header" href="#course-schedule--lecture-tracking">Course Schedule &amp; Lecture Tracking</a></h1>
-<div class="table-wrapper"><table><thead><tr><th>Week</th><th>Date</th><th>Topic</th><th>Status</th><th>Notes Link</th></tr></thead><tbody>
-<tr><td>1</td><td>Aug 23, 2025</td><td>Introduction to AI &amp; ML</td><td>✅ Completed</td><td><a href="./notes/lecture1.html">Lecture 1</a></td></tr>
-<tr><td>2</td><td>Aug 24, 2025</td><td>ML Paradigms, Bayesian, Decision Trees</td><td>✅ Completed</td><td><a href="./notes/lecture2.html">Lecture 2</a></td></tr>
-<tr><td>3</td><td>Aug 30, 2025</td><td>Ensemble Methods</td><td>✅ Completed</td><td><a href="./notes/lecture3.html">Lecture 3</a></td></tr>
-<tr><td>4</td><td>Aug 31, 2025</td><td>Graphical Models (HMM, CRF, MaxEnt)</td><td>✅ Completed</td><td><a href="./notes/lecture4.html">Lecture 4</a></td></tr>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="course-schedule--lecture-tracking"><a class="header" href="#course-schedule--lecture-tracking">Course Schedule &amp; Lecture Tracking</a></h1>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Week</th><th>Date</th><th>Topic</th><th>Status</th><th>Notes Link</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Aug 23, 2025</td><td>Introduction to AI &amp; ML</td><td>✅ Completed</td><td><a href="#-lecture-1-introduction-to-machine-learning">Lecture 1</a></td></tr>
+<tr><td>2</td><td>Aug 24, 2025</td><td>ML Paradigms, Bayesian, Decision Trees</td><td>✅ Completed</td><td><a href="#-lecture-2-ml-paradigms-bayesian-decision-trees">Lecture 2</a></td></tr>
+<tr><td>3</td><td>Aug 30, 2025</td><td>Ensemble Methods</td><td>✅ Completed</td><td><a href="#lecture-3-bayesian--decision-trees">Lecture 3</a></td></tr>
+<tr><td>4</td><td>Aug 31, 2025</td><td>Graphical Models (HMM, CRF, MaxEnt)</td><td>✅ Completed</td><td><a href="#-lecture-4-graphical-models-hmm-crf-maxent">Lecture 4</a></td></tr>
 <tr><td>5</td><td>Sep 6, 2025</td><td>Perceptron &amp; Backpropagation</td><td>🔜 Upcoming</td><td>-</td></tr>
 <tr><td>6</td><td>Sep 7, 2025</td><td>Deep Learning (RNN, LSTM, GRU)</td><td>🔜 Upcoming</td><td>-</td></tr>
 <tr><td>7</td><td>Sep 13, 2025</td><td>Encoder-Decoder, Attention, GANs</td><td>🔜 Upcoming</td><td>-</td></tr>
 <tr><td>8</td><td>Sep 14, 2025</td><td>Feature Selection &amp; PCA</td><td>🔜 Upcoming</td><td>-</td></tr>
 <tr><td>9</td><td>Sep 20, 2025</td><td>Clustering Methods</td><td>🔜 Upcoming</td><td>-</td></tr>
 <tr><td>10</td><td>Sep 21, 2025</td><td>Hypothesis Evaluation &amp; Regression</td><td>🔜 Upcoming</td><td>-</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="course-resources"><a class="header" href="#course-resources">Course Resources</a></h1>
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="course-resources"><a class="header" href="#course-resources">Course Resources</a></h1>
 <h3 id="textbooks"><a class="header" href="#textbooks">Textbooks</a></h3>
 <ul>
 <li>T. Mitchell. <em>Machine Learning</em>. McGraw-Hill, 1997</li>
@@ -236,21 +246,21 @@
 <li>Papoulis &amp; Pillai. <em>Probability, Random Variables and Stochastic Processes</em>, 4th Ed.</li>
 <li>A. K. Jain &amp; R. C. Dubes. <em>Algorithms for Clustering Data</em>. Prentice Hall, 1988</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="fractal-i-supervised-learning-1"><a class="header" href="#fractal-i-supervised-learning-1">Fractal I: Supervised Learning</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="fractal-i-supervised-learning-1"><a class="header" href="#fractal-i-supervised-learning-1">Fractal I: Supervised Learning</a></h1>
 <p>Overview and lecture notes for supervised learning.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="-week-0-math-foundations-detailed-notes--problems"><a class="header" href="#-week-0-math-foundations-detailed-notes--problems">📘 Week 0: Math Foundations (Detailed Notes + Problems)</a></h1>
-<hr />
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-week-0-math-foundations-detailed-notes--problems"><a class="header" href="#-week-0-math-foundations-detailed-notes--problems">📘 Week 0: Math Foundations (Detailed Notes + Problems)</a></h1>
+<hr>
 <h2 id="-1-linear-algebra"><a class="header" href="#-1-linear-algebra">🔹 1. Linear Algebra</a></h2>
 <h3 id="11-vectors"><a class="header" href="#11-vectors"><strong>1.1 Vectors</strong></a></h3>
 <ul>
-<li>A vector = ordered list of numbers.<br />
-$$
+<li>A vector = ordered list of numbers.<br>$$
 \mathbf{x} = \begin{bmatrix} x_1 \ x_2 \ x_3 \end{bmatrix}
-$$<br />
-Example: A student’s marks in 3 subjects: [80, 75, 90].</li>
+$$<br>Example: A student’s marks in 3 subjects: [80, 75, 90].</li>
 </ul>
 <p>👉 Think of vectors as <strong>arrows</strong> in space pointing from the origin.</p>
-<hr />
+<hr>
 <h3 id="12-vector-operations"><a class="header" href="#12-vector-operations"><strong>1.2 Vector Operations</strong></a></h3>
 <ul>
 <li>
@@ -269,96 +279,76 @@ $$</p>
 <p><strong>Dot Product (similarity)</strong>:
 $$
 \mathbf{x}\cdot \mathbf{y} = \sum_{i=1}^n x_i y_i
-$$<br />
-Example:<br />
-[1,2] ⋅ [3,4] = (1)(3) + (2)(4) = 11.</p>
+$$<br>Example:<br>[1,2] ⋅ [3,4] = (1)(3) + (2)(4) = 11.</p>
 </li>
 <li>
 <p><strong>Norm (Length of vector)</strong>:
 $$
 |\mathbf{x}| = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2}
-$$<br />
-Example: ||[3,4]|| = √(3²+4²) = 5.</p>
+$$<br>Example: ||[3,4]|| = √(3²+4²) = 5.</p>
 </li>
 </ul>
-<hr />
+<hr>
 <h3 id="13-matrices"><a class="header" href="#13-matrices"><strong>1.3 Matrices</strong></a></h3>
-<p>A matrix is a <strong>table of numbers</strong>.<br />
-$$
+<p>A matrix is a <strong>table of numbers</strong>.<br>$$
 A = \begin{bmatrix} 1 &amp; 2 \ 3 &amp; 4 \end{bmatrix}
 $$</p>
 <ul>
-<li><strong>Matrix multiplication</strong>:<br />
-Multiply row of first × column of second.<br />
-$$
+<li><strong>Matrix multiplication</strong>:<br>Multiply row of first × column of second.<br>$$
 \begin{bmatrix} 1 &amp; 2 \ 3 &amp; 4 \end{bmatrix}\cdot\begin{bmatrix} 5 &amp; 6 \ 7 &amp; 8 \end{bmatrix}=\begin{bmatrix} 19 &amp; 22 \ 43 &amp; 50 \end{bmatrix}
 $$</li>
 </ul>
-<hr />
+<hr>
 <h3 id="-solved-example"><a class="header" href="#-solved-example">✅ Solved Example</a></h3>
-<p>Compute dot product and norm:<br />
-$$
+<p>Compute dot product and norm:<br>$$
 x = [2,3], \quad y = [4,5]
 $$</p>
 <ul>
 <li>Dot product: 2·4 + 3·5 = 23.</li>
 <li>Norm of x: √(2²+3²) = √13 ≈ 3.61.</li>
 </ul>
-<hr />
+<hr>
 <h3 id="-practice-problems"><a class="header" href="#-practice-problems">💡 Practice Problems</a></h3>
 <ol>
 <li>Compute [1,2,3] ⋅ [4,5,6].</li>
 <li>Find the length of vector [6,8].</li>
-<li>Multiply matrices:<br />
-$$\begin{bmatrix}1 &amp; 2 \ 0 &amp; 1\end{bmatrix} \cdot \begin{bmatrix}3 &amp; 4 \ 5 &amp; 6\end{bmatrix}$$</li>
+<li>Multiply matrices:<br>$$\begin{bmatrix}1 &amp; 2 \ 0 &amp; 1\end{bmatrix} \cdot \begin{bmatrix}3 &amp; 4 \ 5 &amp; 6\end{bmatrix}$$</li>
 </ol>
-<hr />
+<hr>
 <h2 id="-2-calculus"><a class="header" href="#-2-calculus">🔹 2. Calculus</a></h2>
 <h3 id="21-derivatives"><a class="header" href="#21-derivatives"><strong>2.1 Derivatives</strong></a></h3>
-<p>The derivative measures <strong>rate of change</strong> (slope of curve).<br />
-$$
-f'(x) = \frac{df}{dx}
+<p>The derivative measures <strong>rate of change</strong> (slope of curve).<br>$$
+f’(x) = \frac{df}{dx}
 $$</p>
 <ul>
-<li>Example:<br />
-If f(x) = x², then f'(x) = 2x.<br />
-At x=3, slope = 6.</li>
+<li>Example:<br>If f(x) = x², then f’(x) = 2x.<br>At x=3, slope = 6.</li>
 </ul>
-<hr />
+<hr>
 <h3 id="22-gradients"><a class="header" href="#22-gradients"><strong>2.2 Gradients</strong></a></h3>
-<p>For functions with many variables:<br />
-$$
+<p>For functions with many variables:<br>$$
 f(x,y) = x^2 + y^2
-$$<br />
-Gradient = vector of partial derivatives:<br />
-$$
+$$<br>Gradient = vector of partial derivatives:<br>$$
 \nabla f(x,y) = \left[ \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right] = [2x, 2y]
 $$</p>
-<hr />
+<hr>
 <h3 id="23-optimization-gradient-descent"><a class="header" href="#23-optimization-gradient-descent"><strong>2.3 Optimization (Gradient Descent)</strong></a></h3>
-<p>ML uses calculus to <strong>minimize error</strong>.<br />
-Update rule:
+<p>ML uses calculus to <strong>minimize error</strong>.<br>Update rule:
 $$
 \theta := \theta - \alpha \cdot \nabla J(\theta)
-$$<br />
-(where α = learning rate)</p>
-<hr />
+$$<br>(where α = learning rate)</p>
+<hr>
 <h3 id="-solved-example-1"><a class="header" href="#-solved-example-1">✅ Solved Example</a></h3>
-<p>Find derivative of:<br />
-$$
+<p>Find derivative of:<br>$$
 f(x) = 3x^2 + 2x
-$$<br />
-Solution:<br />
-f'(x) = 6x + 2.<br />
-At x=2: slope = 6(2)+2 = 14.</p>
-<hr />
+$$<br>Solution:<br>f’(x) = 6x + 2.<br>At x=2: slope = 6(2)+2 = 14.</p>
+<hr>
 <h3 id="-practice-problems-1"><a class="header" href="#-practice-problems-1">💡 Practice Problems</a></h3>
 <ol>
 <li>Differentiate f(x) = x³ - 5x² + 6.</li>
 <li>Compute gradient of f(x,y) = x² + xy + y².</li>
 <li>If f(x) = x⁴, find slope at x=2.</li>
 </ol>
-<hr />
+<hr>
 <h2 id="-3-probability--statistics"><a class="header" href="#-3-probability--statistics">🔹 3. Probability &amp; Statistics</a></h2>
 <h3 id="31-basics"><a class="header" href="#31-basics"><strong>3.1 Basics</strong></a></h3>
 <ul>
@@ -366,50 +356,45 @@ At x=2: slope = 6(2)+2 = 14.</p>
 <li>P(A ∩ B): probability of A and B.</li>
 <li>P(A|B): probability of A given B.</li>
 </ul>
-<p><strong>Bayes’ Rule</strong>:<br />
-$$
+<p><strong>Bayes’ Rule</strong>:<br>$$
 P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 $$</p>
-<hr />
+<hr>
 <h3 id="32-expectation--variance"><a class="header" href="#32-expectation--variance"><strong>3.2 Expectation &amp; Variance</strong></a></h3>
 <ul>
 <li>
 <p><strong>Expectation</strong>:
 $$
 E[X] = \sum x_i P(x_i)
-$$<br />
-(average value)</p>
+$$<br>(average value)</p>
 </li>
 <li>
 <p><strong>Variance</strong>:
 $$
 Var(X) = E[(X - E[X])^2]
-$$<br />
-(spread of data)</p>
+$$<br>(spread of data)</p>
 </li>
 </ul>
-<hr />
+<hr>
 <h3 id="33-common-distributions"><a class="header" href="#33-common-distributions"><strong>3.3 Common Distributions</strong></a></h3>
 <ul>
 <li><strong>Bernoulli</strong>: coin flip (0/1).</li>
 <li><strong>Gaussian (Normal)</strong>: bell curve.</li>
 </ul>
-<hr />
+<hr>
 <h3 id="-solved-example-2"><a class="header" href="#-solved-example-2">✅ Solved Example</a></h3>
-<p>Roll a fair dice. What is probability of 6?<br />
-$$
+<p>Roll a fair dice. What is probability of 6?<br>$$
 P(6) = \frac{1}{6} ≈ 0.1667
 $$</p>
 <p>If you roll dice 600 times, expected number of 6s = 600 × 1/6 = 100.</p>
-<hr />
+<hr>
 <h3 id="-practice-problems-2"><a class="header" href="#-practice-problems-2">💡 Practice Problems</a></h3>
 <ol>
 <li>Toss a fair coin 3 times. Find probability of getting 2 heads.</li>
 <li>Compute mean &amp; variance of dataset: [2, 4, 4, 4, 5, 5, 7, 9].</li>
-<li>Apply Bayes’ rule:<br />
-A patient has a disease with probability 1%. A test is 90% accurate. If test is positive, what is probability that patient has disease?</li>
+<li>Apply Bayes’ rule:<br>A patient has a disease with probability 1%. A test is 90% accurate. If test is positive, what is probability that patient has disease?</li>
 </ol>
-<hr />
+<hr>
 <h2 id="-4-python-practice"><a class="header" href="#-4-python-practice">🔹 4. Python Practice</a></h2>
 <pre><code class="language-python">import numpy as np
 
@@ -431,16 +416,16 @@ data = [2,4,4,4,5,5,7,9]
 print("Mean:", np.mean(data))
 print("Variance:", np.var(data))
 </code></pre>
-<hr />
+<hr>
 <h2 id="-summary"><a class="header" href="#-summary">📌 Summary</a></h2>
 <ul>
 <li><strong>Linear Algebra</strong> = structure of data (vectors/matrices).</li>
 <li><strong>Calculus</strong> = optimization (slopes, gradients).</li>
 <li><strong>Probability</strong> = uncertainty, distributions, Bayes’ rule.</li>
 </ul>
-<hr />
-<div style="break-before: page; page-break-before: always;"></div><h1 id="-lecture-1-introduction-to-machine-learning"><a class="header" href="#-lecture-1-introduction-to-machine-learning">📘 Lecture 1: Introduction to Machine Learning</a></h1>
-<hr />
+<hr><div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-lecture-1-introduction-to-machine-learning"><a class="header" href="#-lecture-1-introduction-to-machine-learning">📘 Lecture 1: Introduction to Machine Learning</a></h1>
+<hr>
 <h2 id="-1-what-is-machine-learning"><a class="header" href="#-1-what-is-machine-learning">🔹 1. What is Machine Learning?</a></h2>
 <h3 id="definition-tom-mitchell-1997"><a class="header" href="#definition-tom-mitchell-1997"><strong>Definition (Tom Mitchell, 1997)</strong></a></h3>
 <p>A computer program is said to <strong>learn</strong> from experience <strong>E</strong> with respect to some class of tasks <strong>T</strong> and performance measure <strong>P</strong>, if its performance at tasks in T, as measured by P, improves with experience E.</p>
@@ -450,7 +435,7 @@ print("Variance:", np.var(data))
 <li><strong>Performance (P)</strong>: Accuracy of predictions.</li>
 <li><strong>Experience (E)</strong>: Past weather data (temperature, humidity, etc).</li>
 </ul>
-<hr />
+<hr>
 <h2 id="-2-components-of-ml"><a class="header" href="#-2-components-of-ml">🔹 2. Components of ML</a></h2>
 <ol>
 <li>
@@ -475,7 +460,7 @@ print("Variance:", np.var(data))
 <p><strong>Evaluation</strong> – Measure performance (accuracy, error rate, precision, recall, F1).</p>
 </li>
 </ol>
-<hr />
+<hr>
 <h2 id="-3-types-of-learning"><a class="header" href="#-3-types-of-learning">🔹 3. Types of Learning</a></h2>
 <h3 id="1-supervised-learning"><a class="header" href="#1-supervised-learning"><strong>1. Supervised Learning</strong></a></h3>
 <ul>
@@ -510,24 +495,23 @@ print("Variance:", np.var(data))
 </ul>
 </li>
 </ul>
-<hr />
+<hr>
 <h2 id="-4-theoretical-perspectives"><a class="header" href="#-4-theoretical-perspectives">🔹 4. Theoretical Perspectives</a></h2>
 <h3 id="version-spaces"><a class="header" href="#version-spaces"><strong>Version Spaces</strong></a></h3>
 <ul>
 <li>All hypotheses consistent with training data.</li>
 <li>Example: If hypothesis = “Play Tennis when sunny,” then version space = all rules that fit given samples.</li>
 </ul>
-<hr />
+<hr>
 <h3 id="pac-learning-probably-approximately-correct"><a class="header" href="#pac-learning-probably-approximately-correct"><strong>PAC Learning (Probably Approximately Correct)</strong></a></h3>
 <ul>
 <li>Introduced by Valiant (1984).</li>
 <li>Idea: An algorithm is PAC-learnable if, with high probability, it outputs a hypothesis close to the true function, given enough training examples.</li>
-<li>Formal: For any ε (accuracy) and δ (confidence), the learner finds h such that:<br />
-$$
+<li>Formal: For any ε (accuracy) and δ (confidence), the learner finds h such that:<br>$$
 P(error(h) \leq \epsilon) \geq 1 - \delta
 $$</li>
 </ul>
-<hr />
+<hr>
 <h3 id="vc-dimension-vapnikchervonenkis"><a class="header" href="#vc-dimension-vapnikchervonenkis"><strong>VC Dimension (Vapnik–Chervonenkis)</strong></a></h3>
 <ul>
 <li>Measures <strong>capacity/complexity</strong> of a model.</li>
@@ -539,11 +523,16 @@ $$</li>
 </ul>
 </li>
 </ul>
-<hr />
+<hr>
 <h2 id="-5-coding-example--enjoy-sport-dataset"><a class="header" href="#-5-coding-example--enjoy-sport-dataset">🔹 5. Coding Example – “Enjoy Sport” Dataset</a></h2>
 <p>We’ll build a <strong>rule-based classifier</strong>.</p>
 <h3 id="dataset"><a class="header" href="#dataset">Dataset</a></h3>
-<div class="table-wrapper"><table><thead><tr><th>Weather</th><th>Temperature</th><th>Humidity</th><th>Wind</th><th>Play Sport</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Weather</th><th>Temperature</th><th>Humidity</th><th>Wind</th><th>Play Sport</th></tr>
+</thead>
+<tbody>
 <tr><td>Sunny</td><td>Hot</td><td>High</td><td>Weak</td><td>No</td></tr>
 <tr><td>Sunny</td><td>Hot</td><td>High</td><td>Strong</td><td>No</td></tr>
 <tr><td>Overcast</td><td>Hot</td><td>High</td><td>Weak</td><td>Yes</td></tr>
@@ -552,9 +541,10 @@ $$</li>
 <tr><td>Rain</td><td>Cool</td><td>Normal</td><td>Strong</td><td>No</td></tr>
 <tr><td>Overcast</td><td>Cool</td><td>Normal</td><td>Strong</td><td>Yes</td></tr>
 <tr><td>Sunny</td><td>Mild</td><td>High</td><td>Weak</td><td>No</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
-<hr />
+<hr>
 <h3 id="python-implementation"><a class="header" href="#python-implementation">Python Implementation</a></h3>
 <pre><code class="language-python"># Rule-based classifier for "Enjoy Sport"
 
@@ -588,7 +578,7 @@ for row in data:
 print(f"Accuracy: {correct/len(data) * 100:.2f}%")
 </code></pre>
 <p>Expected output: <strong>Accuracy ~100%</strong> (since rules match dataset).</p>
-<hr />
+<hr>
 <h2 id="-practice-tasks"><a class="header" href="#-practice-tasks">🎯 Practice Tasks</a></h2>
 <ol>
 <li>Write your own rule-based classifier for “Play Tennis” dataset.</li>
@@ -602,7 +592,7 @@ print(f"Accuracy: {correct/len(data) * 100:.2f}%")
 </ul>
 </li>
 </ol>
-<hr />
+<hr>
 <h2 id="-summary-1"><a class="header" href="#-summary-1">📝 Summary</a></h2>
 <ul>
 <li><strong>ML definition</strong> = Task, Performance, Experience.</li>
@@ -611,9 +601,9 @@ print(f"Accuracy: {correct/len(data) * 100:.2f}%")
 <li><strong>Theories</strong> = Version Spaces, PAC learning, VC dimension.</li>
 <li><strong>Hands-on</strong>: Built simple rule-based classifier for “Enjoy Sport.”</li>
 </ul>
-<hr />
-<div style="break-before: page; page-break-before: always;"></div><h1 id="-lecture-2-ml-paradigms-bayesian-decision-trees"><a class="header" href="#-lecture-2-ml-paradigms-bayesian-decision-trees">📘 Lecture 2: ML Paradigms, Bayesian, Decision Trees</a></h1>
-<hr />
+<hr><div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-lecture-2-ml-paradigms-bayesian-decision-trees"><a class="header" href="#-lecture-2-ml-paradigms-bayesian-decision-trees">📘 Lecture 2: ML Paradigms, Bayesian, Decision Trees</a></h1>
+<hr>
 <h2 id="1-ml-paradigms"><a class="header" href="#1-ml-paradigms">1. ML Paradigms</a></h2>
 <ul>
 <li><strong>Supervised Learning:</strong> Learn from labeled data (e.g., classification, regression).</li>
@@ -655,23 +645,21 @@ $$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$
 <li>Bayesian learning uses probability and prior knowledge.</li>
 <li>Decision trees are interpretable, widely used for classification.</li>
 </ul>
-<hr />
+<hr>
 <h1 id="-lecture-2-regression-supervised-learning--part-1"><a class="header" href="#-lecture-2-regression-supervised-learning--part-1">📘 Lecture 2: Regression (Supervised Learning – Part 1)</a></h1>
-<hr />
+<hr>
 <h2 id="-1-intuition"><a class="header" href="#-1-intuition">🔹 1. Intuition</a></h2>
-<p>Regression = <strong>predicting numbers</strong>.<br />
-Think of it like:</p>
+<p>Regression = <strong>predicting numbers</strong>.<br>Think of it like:</p>
 <ul>
 <li>Hours studied → Exam score.</li>
 <li>Size of house → Price.</li>
 <li>Temperature → Ice cream sales.</li>
 </ul>
 <p>We try to fit a <strong>line</strong> (or curve) through the data to make predictions.</p>
-<hr />
+<hr>
 <h2 id="-2-linear-regression"><a class="header" href="#-2-linear-regression">🔹 2. Linear Regression</a></h2>
 <h3 id="model"><a class="header" href="#model"><strong>Model</strong></a></h3>
-<p>For one variable (simple linear regression):<br />
-$$
+<p>For one variable (simple linear regression):<br>$$
 h_\theta(x) = \theta_0 + \theta_1 x
 $$</p>
 <ul>
@@ -680,40 +668,35 @@ $$</p>
 <li>θ0: intercept (baseline).</li>
 <li>θ1: slope (effect of study hours).</li>
 </ul>
-<hr />
+<hr>
 <h3 id="cost-function"><a class="header" href="#cost-function"><strong>Cost Function</strong></a></h3>
-<p>We want predictions close to actual values.<br />
-Mean Squared Error (MSE):<br />
-$$
+<p>We want predictions close to actual values.<br>Mean Squared Error (MSE):<br>$$
 J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2
 $$</p>
-<hr />
+<hr>
 <h3 id="optimization-gradient-descent"><a class="header" href="#optimization-gradient-descent"><strong>Optimization (Gradient Descent)</strong></a></h3>
-<p>Update rule:<br />
-$$
+<p>Update rule:<br>$$
 \theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta)
 $$</p>
 <ul>
 <li>α: learning rate.</li>
 <li>Repeat until convergence.</li>
 </ul>
-<hr />
+<hr>
 <h2 id="-3-multiple-linear-regression"><a class="header" href="#-3-multiple-linear-regression">🔹 3. Multiple Linear Regression</a></h2>
-<p>When there are many features:<br />
-$$
+<p>When there are many features:<br>$$
 h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + \dots + \theta_nx_n
 $$</p>
 <p>Example: House price = f(size, bedrooms, location).</p>
-<hr />
+<hr>
 <h2 id="-4-logistic-regression-classification-preview"><a class="header" href="#-4-logistic-regression-classification-preview">🔹 4. Logistic Regression (Classification Preview)</a></h2>
 <ul>
 <li>For classification (Yes/No).</li>
-<li>Uses <strong>sigmoid function</strong>:<br />
-$$
+<li>Uses <strong>sigmoid function</strong>:<br>$$
 h_\theta(x) = \frac{1}{1 + e^{-\theta^T x}}
 $$</li>
 </ul>
-<hr />
+<hr>
 <h2 id="-5-python-example-predict-exam-scores"><a class="header" href="#-5-python-example-predict-exam-scores">🔹 5. Python Example: Predict Exam Scores</a></h2>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
@@ -742,13 +725,11 @@ plt.ylabel("Exam Marks")
 plt.legend()
 plt.show()
 </code></pre>
-<hr />
+<hr>
 <h2 id="-practice-tasks-1"><a class="header" href="#-practice-tasks-1">🎯 Practice Tasks</a></h2>
 <ol>
 <li>
-<p>Fit a linear regression line for data:<br />
-Hours studied = [2, 4, 6, 8]<br />
-Marks = [81, 93, 91, 97].</p>
+<p>Fit a linear regression line for data:<br>Hours studied = [2, 4, 6, 8]<br>Marks = [81, 93, 91, 97].</p>
 </li>
 <li>
 <p>Compute cost function J(θ) for predictions [50, 60, 70] vs actual [52, 58, 75].</p>
@@ -763,7 +744,7 @@ Marks = [81, 93, 91, 97].</p>
 <p>Plot a logistic regression curve for “exam passed” (Yes/No) given hours studied.</p>
 </li>
 </ol>
-<hr />
+<hr>
 <h2 id="-summary-2"><a class="header" href="#-summary-2">📝 Summary</a></h2>
 <ul>
 <li>Regression predicts <strong>numbers</strong> (continuous values).</li>
@@ -773,17 +754,15 @@ Marks = [81, 93, 91, 97].</p>
 <li>Multiple regression → many features.</li>
 <li>Logistic regression → classification (0/1).</li>
 </ul>
-<hr />
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-3-bayesian--decision-trees"><a class="header" href="#lecture-3-bayesian--decision-trees">Lecture 3: Bayesian &amp; Decision Trees</a></h1>
+<hr><div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lecture-3-bayesian--decision-trees"><a class="header" href="#lecture-3-bayesian--decision-trees">Lecture 3: Bayesian &amp; Decision Trees</a></h1>
 <h2 id="1-intuition"><a class="header" href="#1-intuition">1. Intuition</a></h2>
-<p>Think of a <strong>decision tree</strong> like a flowchart: you start at the root, ask questions (splits), and reach a leaf that gives a decision (class or prediction).<br />
-But a classical tree just picks <strong>the single best split</strong> at each step (like ID3 or CART).<br />
-A <strong>Bayesian Decision Tree</strong> instead says:</p>
+<p>Think of a <strong>decision tree</strong> like a flowchart: you start at the root, ask questions (splits), and reach a leaf that gives a decision (class or prediction).<br>But a classical tree just picks <strong>the single best split</strong> at each step (like ID3 or CART).<br>A <strong>Bayesian Decision Tree</strong> instead says:</p>
 <blockquote>
 <p>“There’s uncertainty about which split is truly best. Let’s treat the tree as a probability model and use Bayes’ rule to average over possible trees.”</p>
 </blockquote>
 <p>So instead of one “best” tree, BDTs maintain a <strong>distribution over trees</strong>, capturing uncertainty in structure and parameters.</p>
-<hr />
+<hr>
 <h2 id="2-the-bayesian-framework"><a class="header" href="#2-the-bayesian-framework">2. The Bayesian Framework</a></h2>
 <h3 id="21-bayes-rule-recap"><a class="header" href="#21-bayes-rule-recap">2.1 Bayes’ Rule Recap</a></h3>
 <p>For a hypothesis/model (h) and data (D):
@@ -797,22 +776,20 @@ P(h \mid D) ;=; \frac{P(D \mid h) , P(h)}{P(D)}
 <li>(P(D)): evidence (normalizer).</li>
 </ul>
 <p>In BDTs, (h) is a particular tree structure with its splitting rules and leaf parameters.</p>
-<hr />
+<hr>
 <h3 id="22-tree-components"><a class="header" href="#22-tree-components">2.2 Tree Components</a></h3>
 <ul>
 <li><strong>Structure prior</strong> (P(T)): distribution over possible tree shapes (depth, splits). Often favors smaller trees (Occam’s razor).</li>
 <li><strong>Leaf distributions</strong>: each leaf models class probabilities (e.g., multinomial with Dirichlet prior).</li>
 <li><strong>Likelihood</strong> (P(D \mid T)): probability of data given the splits and leaf distributions.</li>
 </ul>
-<hr />
+<hr>
 <h2 id="3-bayesian-decision-tree-construction"><a class="header" href="#3-bayesian-decision-tree-construction">3. Bayesian Decision Tree Construction</a></h2>
 <h3 id="31-priors"><a class="header" href="#31-priors">3.1 Priors</a></h3>
 <ol>
-<li><strong>Structure prior</strong>: probability of expanding a node at depth (d):<br />
-[
+<li><strong>Structure prior</strong>: probability of expanding a node at depth (d):<br>[
 P(\text{split at depth } d) = \alpha (1+d)^{-\beta}
-]<br />
-with hyperparameters (\alpha, \beta) controlling preference for shallow trees.</li>
+]<br>with hyperparameters (\alpha, \beta) controlling preference for shallow trees.</li>
 <li><strong>Leaf prior</strong>: for classification, leaf class probabilities (\theta \sim \text{Dirichlet}(\gamma)).</li>
 </ol>
 <h3 id="32-posterior"><a class="header" href="#32-posterior">3.2 Posterior</a></h3>
@@ -826,7 +803,7 @@ P(T \mid D) ;\propto; P(D \mid T) , P(T)
 P(y \mid x, D) ;=; \sum_{T} P(y \mid x, T) , P(T \mid D)
 ]
 In practice, the sum over all trees is intractable → we use <strong>sampling (MCMC)</strong> or <strong>variational approximations</strong>.</p>
-<hr />
+<hr>
 <h2 id="4-learning-bayesian-trees"><a class="header" href="#4-learning-bayesian-trees">4. Learning Bayesian Trees</a></h2>
 <h3 id="41-posterior-sampling"><a class="header" href="#41-posterior-sampling">4.1 Posterior Sampling</a></h3>
 <ul>
@@ -840,21 +817,20 @@ In practice, the sum over all trees is intractable → we use <strong>sampling (
 </li>
 </ul>
 <h3 id="42-marginal-likelihood-at-leaves"><a class="header" href="#42-marginal-likelihood-at-leaves">4.2 Marginal Likelihood at Leaves</a></h3>
-<p>For a leaf with class counts (n_1, \dots, n_K) and prior (\text{Dirichlet}(\gamma)),<br />
-the marginal likelihood is:
+<p>For a leaf with class counts (n_1, \dots, n_K) and prior (\text{Dirichlet}(\gamma)),<br>the marginal likelihood is:
 [
 P(D_{\text{leaf}}) = \frac{\Gamma(\sum_k \gamma_k)}{\prod_k \Gamma(\gamma_k)} ;
 \frac{\prod_k \Gamma(n_k + \gamma_k)}{\Gamma(\sum_k n_k + \sum_k \gamma_k)}
 ]</p>
 <p>This formula allows computing (P(D \mid T)) without explicitly estimating parameters.</p>
-<hr />
+<hr>
 <h2 id="5-advantages-of-bayesian-trees"><a class="header" href="#5-advantages-of-bayesian-trees">5. Advantages of Bayesian Trees</a></h2>
 <ol>
 <li><strong>Uncertainty estimation</strong>: Instead of one tree, BDTs give posterior distributions over trees.</li>
 <li><strong>Better generalization</strong>: Avoids overfitting by averaging multiple plausible trees.</li>
 <li><strong>Model selection built-in</strong>: Tree depth and splits are controlled probabilistically (priors penalize overly complex trees).</li>
 </ol>
-<hr />
+<hr>
 <h2 id="6-practical-example"><a class="header" href="#6-practical-example">6. Practical Example</a></h2>
 <h3 id="dataset-enjoy-sport"><a class="header" href="#dataset-enjoy-sport">Dataset: “Enjoy Sport”</a></h3>
 <p>Suppose we want to classify if a person enjoys sport ((y={Yes,No})) based on attributes (Sky, Temp, Wind, etc.).</p>
@@ -864,11 +840,10 @@ P(D_{\text{leaf}}) = \frac{\Gamma(\sum_k \gamma_k)}{\prod_k \Gamma(\gamma_k)} ;
 </ol>
 <p>So instead of predicting:</p>
 <ul>
-<li>“Sky = Sunny → Enjoy Sport = Yes” deterministically,<br />
-it says:</li>
+<li>“Sky = Sunny → Enjoy Sport = Yes” deterministically,<br>it says:</li>
 <li>“There’s a 70% chance Enjoy Sport = Yes, 30% No,” reflecting uncertainty in tree choice.</li>
 </ul>
-<hr />
+<hr>
 <h2 id="7-coding-snippet-simplified"><a class="header" href="#7-coding-snippet-simplified">7. Coding Snippet (Simplified)</a></h2>
 <pre><code class="language-python">import numpy as np
 from sklearn.tree import DecisionTreeClassifier
@@ -889,7 +864,7 @@ bayesian_tree.fit(X, y)
 print(bayesian_tree.predict_proba([[1,0]]))  # predictive distribution
 </code></pre>
 <p>While true Bayesian decision trees use MCMC, <strong>bagging approximates the posterior averaging</strong> in practice.</p>
-<hr />
+<hr>
 <h2 id="8-practice-problems"><a class="header" href="#8-practice-problems">8. Practice Problems</a></h2>
 <ol>
 <li><strong>Conceptual</strong>:
@@ -908,7 +883,7 @@ print(bayesian_tree.predict_proba([[1,0]]))  # predictive distribution
 </ul>
 </li>
 </ol>
-<hr />
+<hr>
 <h2 id="9-summary-notes"><a class="header" href="#9-summary-notes">9. Summary Notes</a></h2>
 <ul>
 <li><strong>Classical trees</strong>: pick greedy splits → single tree.</li>
@@ -917,8 +892,9 @@ print(bayesian_tree.predict_proba([[1,0]]))  # predictive distribution
 <li><strong>Predictions</strong>: average over sampled trees = better calibrated probabilities.</li>
 <li><strong>Approximation</strong>: Random forests and bagging ≈ Bayesian averaging.</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="-lecture-4-graphical-models-hmm-crf-maxent"><a class="header" href="#-lecture-4-graphical-models-hmm-crf-maxent">📘 Lecture 4: Graphical Models (HMM, CRF, MaxEnt)</a></h1>
-<hr />
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-lecture-4-graphical-models-hmm-crf-maxent"><a class="header" href="#-lecture-4-graphical-models-hmm-crf-maxent">📘 Lecture 4: Graphical Models (HMM, CRF, MaxEnt)</a></h1>
+<hr>
 <h2 id="1-introduction-to-graphical-models"><a class="header" href="#1-introduction-to-graphical-models">1. Introduction to Graphical Models</a></h2>
 <ul>
 <li>What are graphical models? Types: directed, undirected</li>
@@ -944,22 +920,33 @@ print(bayesian_tree.predict_proba([[1,0]]))  # predictive distribution
 <ul>
 <li>Key takeaways and further reading</li>
 </ul>
-<hr />
+<hr>
 <h1 id="lecture-4-ensemble-methods"><a class="header" href="#lecture-4-ensemble-methods">Lecture 4: Ensemble Methods</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="fractal-ii-graphical-models--neural-networks"><a class="header" href="#fractal-ii-graphical-models--neural-networks">Fractal II: Graphical Models &amp; Neural Networks</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="fractal-ii-graphical-models--neural-networks"><a class="header" href="#fractal-ii-graphical-models--neural-networks">Fractal II: Graphical Models &amp; Neural Networks</a></h1>
 <p>Overview and lecture notes for graphical models and neural networks.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-5-graphical-models-hmm-crf"><a class="header" href="#lecture-5-graphical-models-hmm-crf">Lecture 5: Graphical Models (HMM, CRF)</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-6-perceptron--backprop"><a class="header" href="#lecture-6-perceptron--backprop">Lecture 6: Perceptron &amp; Backprop</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-7-rnn-lstm-gru"><a class="header" href="#lecture-7-rnn-lstm-gru">Lecture 7: RNN, LSTM, GRU</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-8-encoder-decoder-attention-gans"><a class="header" href="#lecture-8-encoder-decoder-attention-gans">Lecture 8: Encoder-Decoder, Attention, GANs</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="fractal-iii-unsupervised-learning"><a class="header" href="#fractal-iii-unsupervised-learning">Fractal III: Unsupervised Learning</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lecture-5-graphical-models-hmm-crf"><a class="header" href="#lecture-5-graphical-models-hmm-crf">Lecture 5: Graphical Models (HMM, CRF)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lecture-6-perceptron--backprop"><a class="header" href="#lecture-6-perceptron--backprop">Lecture 6: Perceptron &amp; Backprop</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lecture-7-rnn-lstm-gru"><a class="header" href="#lecture-7-rnn-lstm-gru">Lecture 7: RNN, LSTM, GRU</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lecture-8-encoder-decoder-attention-gans"><a class="header" href="#lecture-8-encoder-decoder-attention-gans">Lecture 8: Encoder-Decoder, Attention, GANs</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="fractal-iii-unsupervised-learning"><a class="header" href="#fractal-iii-unsupervised-learning">Fractal III: Unsupervised Learning</a></h1>
 <p>Overview and lecture notes for unsupervised learning.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-9-feature-selection--pca"><a class="header" href="#lecture-9-feature-selection--pca">Lecture 9: Feature Selection &amp; PCA</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-10-clustering-methods"><a class="header" href="#lecture-10-clustering-methods">Lecture 10: Clustering Methods</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lecture-11-hypothesis-evaluation"><a class="header" href="#lecture-11-hypothesis-evaluation">Lecture 11: Hypothesis Evaluation</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="assignments"><a class="header" href="#assignments">Assignments</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lecture-9-feature-selection--pca"><a class="header" href="#lecture-9-feature-selection--pca">Lecture 9: Feature Selection &amp; PCA</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lecture-10-clustering-methods"><a class="header" href="#lecture-10-clustering-methods">Lecture 10: Clustering Methods</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lecture-11-hypothesis-evaluation"><a class="header" href="#lecture-11-hypothesis-evaluation">Lecture 11: Hypothesis Evaluation</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="assignments"><a class="header" href="#assignments">Assignments</a></h1>
 <p>This section will contain assignment instructions and due dates.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="notes-in-progress"><a class="header" href="#notes-in-progress">Notes in Progress</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="notes-in-progress"><a class="header" href="#notes-in-progress">Notes in Progress</a></h1>
 <h2 id="lecture-3-sept-19--ensemble-methods"><a class="header" href="#lecture-3-sept-19--ensemble-methods">Lecture 3 (Sept 19) – Ensemble Methods</a></h2>
 <ul>
 <li>Bagging</li>
@@ -985,6 +972,11 @@ print(bayesian_tree.predict_proba([[1,0]]))  # predictive distribution
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -993,13 +985,13 @@ print(bayesian_tree.predict_proba([[1,0]]))  # predictive distribution
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 
